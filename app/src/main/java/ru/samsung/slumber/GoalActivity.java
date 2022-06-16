@@ -110,6 +110,7 @@ public class GoalActivity extends AppCompatActivity implements View.OnClickListe
                     trackingSleepButton.setBackgroundResource(R.drawable.multi_choosing_button);
                     tracking = false;
                 }
+
         }
 
 
