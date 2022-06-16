@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Slumber</string>
+    <string name="login"><u>Войти</u></string>
+    <string name="skip"><u>Пропустить</u></string>
+
+
+</resources>

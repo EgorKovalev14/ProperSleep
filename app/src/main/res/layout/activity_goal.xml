@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background">
+
+    <ImageView
+        android:id="@+id/trackingSleepImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/trackingSleepButton"
+        app:layout_constraintEnd_toEndOf="@+id/trackingSleepButton"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="@+id/trackingSleepButton"
+        app:layout_constraintTop_toTopOf="@+id/trackingSleepButton"
+        app:layout_constraintVertical_bias="0.183"
+        app:srcCompat="@drawable/grafic"
+        android:clickable="true" />
+
+    <TextView
+        android:id="@+id/trackingSleepTextView"
+        android:layout_width="133dp"
+        android:layout_height="58dp"
+        android:elevation="3dp"
+        android:fontFamily="@font/gilroy_extrabold"
+        android:gravity="center"
+        android:text="Отслеживание сна"
+        android:textColor="@color/gray_purple"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/trackingSleepButton"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="@+id/trackingSleepButton"
+        app:layout_constraintTop_toTopOf="@+id/trackingSleepButton"
+        app:layout_constraintVertical_bias="0.104"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gilroy_extrabold"
+        android:gravity="left"
+        android:text="Привет, "
+        android:textColor="@color/gray_purple"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.149" />
+
+    <TextView
+        android:id="@+id/goalNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gilroy_extrabold"
+        android:gravity="left"
+        android:text="User"
+        android:textColor="@color/gray_purple"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.149" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gilroy_semibold"
+        android:text="Что вы хотите получить?"
+        android:textColor="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.246" />
+
+    <TextView
+        android:id="@+id/textView123"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gilroy_semibold"
+        android:text="@string/skip"
+        android:textColor="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.064" />
+
+    <Button
+        android:id="@+id/continueGoalButton"
+        android:layout_width="360dp"
+        android:layout_height="52dp"
+        android:background="@drawable/button_gradient"
+        android:fontFamily="@font/gilroy_bold"
+        android:text="Продолжить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.918" />
+
+
+    <Button
+        android:id="@+id/trackingSleepButton"
+        android:layout_width="162dp"
+        android:layout_height="102dp"
+        android:background="@drawable/multi_choosing_button"
+        android:fontFamily="@font/gilroy_bold"
+        android:gravity="center"
+        android:paddingLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fasterSleepButton"
+        app:layout_constraintHorizontal_bias="0.622"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.343" />
+
+    <Button
+        android:id="@+id/fasterSleepButton"
+        android:layout_width="162dp"
+        android:layout_height="102dp"
+        android:background="@drawable/multi_choosing_button"
+        android:fontFamily="@font/gilroy_bold"
+        android:gravity="center"
+        android:paddingRight="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/betterWakeUpButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/trackingSleepButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/betterSleepButton"
+        android:layout_width="162dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/multi_choosing_button"
+        android:fontFamily="@font/gilroy_bold"
+        android:gravity="center"
+        android:paddingLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/trackingSleepButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/trackingSleepButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.527" />
+
+    <Button
+        android:id="@+id/betterWakeUpButton"
+        android:layout_width="162dp"
+        android:layout_height="102dp"
+        android:background="@drawable/multi_choosing_button"
+        android:fontFamily="@font/gilroy_bold"
+        android:gravity="center"
+        android:paddingRight="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.538" />
+
+    <Button
+        android:id="@+id/regulateRythmButton"
+        android:layout_width="162dp"
+        android:layout_height="102dp"
+        android:background="@drawable/multi_choosing_button"
+        android:fontFamily="@font/gilroy_bold"
+        android:gravity="center"
+        android:paddingLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/betterSleepButton"
+        app:layout_constraintTop_toBottomOf="@+id/betterSleepButton"
+        app:layout_constraintVertical_bias="0.106" />
+
+    <Button
+        android:id="@+id/relaxButton"
+        android:layout_width="162dp"
+        android:layout_height="102dp"
+        android:background="@drawable/multi_choosing_button"
+        android:fontFamily="@font/gilroy_bold"
+        android:gravity="center"
+        android:paddingRight="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toEndOf="@+id/regulateRythmButton"
+        app:layout_constraintTop_toBottomOf="@+id/betterWakeUpButton"
+        app:layout_constraintVertical_bias="0.111" />
+
+    <ImageView
+        android:id="@+id/fasterSleepImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fasterSleepButton"
+        app:layout_constraintEnd_toEndOf="@+id/fasterSleepButton"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="@+id/fasterSleepButton"
+        app:layout_constraintTop_toTopOf="@+id/fasterSleepButton"
+        app:layout_constraintVertical_bias="0.179"
+        app:srcCompat="@drawable/yawning"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/fasterSleepTextView"
+        android:layout_width="133dp"
+        android:layout_height="58dp"
+        android:elevation="3dp"
+        android:fontFamily="@font/gilroy_extrabold"
+        android:gravity="center"
+        android:text="Быстрее засыпать"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fasterSleepButton"
+        app:layout_constraintEnd_toEndOf="@+id/fasterSleepButton"
+        app:layout_constraintHorizontal_bias="0.655"
+        app:layout_constraintStart_toStartOf="@+id/fasterSleepButton"
+        app:layout_constraintTop_toTopOf="@+id/fasterSleepButton"
+        app:layout_constraintVertical_bias="1.0"
+        android:clickable="true"/>
+
+    <ImageView
+        android:id="@+id/betterSleepImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/betterSleepButton"
+        app:layout_constraintEnd_toEndOf="@+id/betterSleepButton"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/betterSleepButton"
+        app:layout_constraintTop_toTopOf="@+id/betterSleepButton"
+        app:layout_constraintVertical_bias="0.134"
+        app:srcCompat="@drawable/sleeping"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/betterSleepTextView"
+        android:layout_width="133dp"
+        android:layout_height="58dp"
+        android:elevation="3dp"
+        android:fontFamily="@font/gilroy_extrabold"
+        android:gravity="center"
+        android:text="Улучшение качества сна"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/betterSleepButton"
+        app:layout_constraintEnd_toEndOf="@+id/betterSleepButton"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="@+id/betterSleepButton"
+        app:layout_constraintTop_toTopOf="@+id/betterSleepButton"
+        app:layout_constraintVertical_bias="1.0"
+        android:clickable="true"/>
+
+    <ImageView
+        android:id="@+id/easierWakeUpImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/betterWakeUpButton"
+        app:layout_constraintEnd_toEndOf="@+id/betterWakeUpButton"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="@+id/betterWakeUpButton"
+        app:layout_constraintTop_toTopOf="@+id/betterWakeUpButton"
+        app:layout_constraintVertical_bias="0.134"
+        app:srcCompat="@drawable/bed"
+        android:clickable="true"
+        android:elevation="3dp"/>
+
+    <TextView
+        android:id="@+id/easierWakeUpTextView"
+        android:layout_width="133dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="44dp"
+        android:clickable="true"
+        android:elevation="3dp"
+        android:fontFamily="@font/gilroy_extrabold"
+        android:gravity="center"
+        android:text="Легче вставать"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/betterWakeUpButton"
+        app:layout_constraintEnd_toEndOf="@+id/betterWakeUpButton"
+        app:layout_constraintHorizontal_bias="0.655"
+        app:layout_constraintStart_toStartOf="@+id/betterWakeUpButton"
+        app:layout_constraintTop_toTopOf="@+id/betterWakeUpButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/regulateImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/regulateRythmButton"
+        app:layout_constraintEnd_toEndOf="@+id/regulateRythmButton"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="@+id/regulateRythmButton"
+        app:layout_constraintTop_toTopOf="@+id/regulateRythmButton"
+        app:layout_constraintVertical_bias="0.119"
+        app:srcCompat="@drawable/laptop_man" />
+
+    <TextView
+        android:id="@+id/regulateRythmTextView"
+        android:layout_width="153dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="44dp"
+        android:clickable="true"
+        android:elevation="3dp"
+        android:fontFamily="@font/gilroy_extrabold"
+        android:gravity="center"
+        android:text="Отрегулировать ритм жизни"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/regulateRythmButton"
+        app:layout_constraintEnd_toEndOf="@+id/regulateRythmButton"
+        app:layout_constraintHorizontal_bias="0.655"
+        app:layout_constraintStart_toStartOf="@+id/regulateRythmButton"
+        app:layout_constraintTop_toTopOf="@+id/regulateRythmButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/relaxImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="9dp"
+
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="58dp"
+        android:clickable="true"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/relaxButton"
+        app:layout_constraintEnd_toEndOf="@+id/relaxButton"
+        app:layout_constraintStart_toStartOf="@+id/relaxButton"
+        app:layout_constraintTop_toTopOf="@+id/relaxButton"
+        app:srcCompat="@drawable/massage_woman" />
+
+    <TextView
+        android:id="@+id/relaxTextView"
+        android:layout_width="153dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginBottom="1dp"
+        android:clickable="true"
+        android:elevation="3dp"
+        android:fontFamily="@font/gilroy_extrabold"
+        android:gravity="center"
+        android:text="Расслабиться"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/relaxButton"
+        app:layout_constraintEnd_toEndOf="@+id/relaxButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/relaxButton"
+        app:layout_constraintTop_toTopOf="@+id/relaxButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
