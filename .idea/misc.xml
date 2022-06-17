@@ -3,16 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/drawable/arrow_up.xml" value="0.161" />
         <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/drawable/button_gradient.xml" value="0.1125" />
         <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/drawable/cursor.xml" value="0.1565" />
         <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/drawable/edit_text.xml" value="0.1565" />
         <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/drawable/multi_choosing_button.xml" value="0.1565" />
         <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/drawable/multi_choosing_button_stroke.xml" value="0.162" />
         <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/layout/activity_email.xml" value="0.264" />
-        <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/layout/activity_goal.xml" value="0.176" />
+        <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/layout/activity_go_to_sleep_time.xml" value="0.2" />
+        <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/layout/activity_goal.xml" value="0.2" />
+        <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/layout/activity_how_old.xml" value="0.2076923076923077" />
         <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/layout/activity_name.xml" value="0.4" />
+        <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/layout/activity_need_sleep.xml" value="0.184375" />
         <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/layout/activity_password.xml" value="0.2375" />
+        <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/layout/activity_regime.xml" value="0.15260416666666668" />
+        <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/layout/activity_wake_up_time.xml" value="0.253125" />
+        <entry key="..\:/Users/Egor/AndroidStudioProjects/Slumber/app/src/main/res/layout/activity_welcome.xml" value="0.536" />
       </map>
     </option>
   </component>

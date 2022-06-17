@@ -38,6 +38,31 @@
             android:name=".GoalActivity">
 
         </activity>
+        <activity
+            android:name=".HowOldActivivty">
+
+        </activity>
+        <activity
+            android:name=".GoToSleepActivity">
+
+        </activity>
+        <activity
+            android:name=".WakeUpTimeActivity">
+
+        </activity>
+        <activity
+            android:name=".NeedSleepActivity">
+
+        </activity>
+        <activity
+            android:name=".RegimeActivity">
+
+        </activity>
+        <activity
+            android:name=".WelcomeActivity">
+
+        </activity>
+
 
     </application>
 

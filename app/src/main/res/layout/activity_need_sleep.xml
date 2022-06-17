@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <Button
+        android:id="@+id/trackingSleepButton"
+        android:layout_width="381dp"
+        android:layout_height="74dp"
+        android:background="@drawable/multi_choosing_button"
+        android:fontFamily="@font/gilroy_bold"
+        android:gravity="center"
+        android:paddingLeft="30dp"
+        android:text="до 4 часов"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.273"
+        />
+
+    <Button
+        android:id="@+id/trackingSleepButton1"
+        android:layout_width="381dp"
+        android:layout_height="74dp"
+        android:background="@drawable/multi_choosing_button"
+        android:fontFamily="@font/gilroy_bold"
+        android:gravity="center"
+        android:paddingLeft="30dp"
+        android:text="4 - 5 часов"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trackingSleepButton"
+        app:layout_constraintVertical_bias="0.039" />
+
+
+    <Button
+        android:id="@+id/trackingSleepButton3"
+        android:layout_width="381dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/multi_choosing_button"
+        android:fontFamily="@font/gilroy_bold"
+        android:gravity="center"
+        android:paddingLeft="30dp"
+        android:text="6 - 7 часов"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/trackingSleepButton1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/trackingSleepButton1"
+        app:layout_constraintTop_toBottomOf="@+id/trackingSleepButton1"
+        app:layout_constraintVertical_bias="0.013" />
+
+    <Button
+        android:id="@+id/trackingSleepButton4"
+        android:layout_width="381dp"
+        android:layout_height="74dp"
+        android:background="@drawable/multi_choosing_button"
+        android:fontFamily="@font/gilroy_bold"
+        android:gravity="center"
+        android:paddingLeft="30dp"
+        android:text="8 - 9 часов"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/trackingSleepButton3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/trackingSleepButton3"
+        app:layout_constraintTop_toBottomOf="@+id/trackingSleepButton3"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <Button
+        android:id="@+id/trackingSleepButton5"
+        android:layout_width="381dp"
+        android:layout_height="74dp"
+        android:background="@drawable/multi_choosing_button"
+        android:fontFamily="@font/gilroy_bold"
+        android:gravity="center"
+        android:paddingLeft="30dp"
+        android:textSize="18dp"
+        android:text="больше 9 часов"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/trackingSleepButton3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/trackingSleepButton3"
+        app:layout_constraintTop_toBottomOf="@+id/trackingSleepButton4"
+        app:layout_constraintVertical_bias="0.088" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gilroy_extrabold"
+        android:gravity="left"
+        android:text="Привет, "
+        android:textColor="@color/gray_purple"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.092" />
+
+    <TextView
+        android:id="@+id/needNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gilroy_extrabold"
+        android:gravity="left"
+        android:text="User"
+        android:textColor="@color/gray_purple"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.092" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="374dp"
+        android:layout_height="43dp"
+        android:fontFamily="@font/gilroy_semibold"
+        android:text="Сколько вам необходимо спать чтобы быть бодрым?"
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.162" />
+
+    <Button
+        android:id="@+id/continueNeedSleepButton"
+        android:layout_width="360dp"
+        android:layout_height="52dp"
+        android:background="@drawable/button_gradient"
+        android:fontFamily="@font/gilroy_bold"
+        android:text="Продолжить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.313"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.93" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

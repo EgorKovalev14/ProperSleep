@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class GoalActivity extends AppCompatActivity implements View.OnClickListener {
     TextView textView;
+    Button continueGoalButton;
     Button trackingSleepButton;
     Button fasterSleepButton;
     Button betterSleep;
@@ -38,7 +39,6 @@ public class GoalActivity extends AppCompatActivity implements View.OnClickListe
     Boolean easier;
     Boolean regulate;
     Boolean relax;
-
 
 
     @Override
@@ -68,51 +68,223 @@ public class GoalActivity extends AppCompatActivity implements View.OnClickListe
         relaxImageView = findViewById(R.id.relaxImageView);
         trackingTextView.setOnClickListener(this);
         trackingImageView.setOnClickListener(this);
+        fasterImageView.setOnClickListener(this);
+        fasterSleepButton.setOnClickListener(this);
+        fasterTextView.setOnClickListener(this);
+        betterSleep.setOnClickListener(this);
+        betterImageView.setOnClickListener(this);
+        betterTextView.setOnClickListener(this);
+        easierImageView.setOnClickListener(this);
+        easierTextView.setOnClickListener(this);
+        easierWakeUpButton.setOnClickListener(this);
+        regulateImageView.setOnClickListener(this);
+        regulateRythmButton.setOnClickListener(this);
+        regulateTextView.setOnClickListener(this);
+        relaxButton.setOnClickListener(this);
+        relaxImageView.setOnClickListener(this);
+        relaxTextView.setOnClickListener(this);
         tracking = false;
         faster = false;
         better = false;
         easier = false;
         regulate = false;
         relax = false;
-
-
+        continueGoalButton = findViewById(R.id.continueGoalButton);
+        continueGoalButton.setOnClickListener(this);
 
 
     }
 
     @Override
     public void onClick(View view) {
-        switch(view.getId()){
+        switch (view.getId()) {
             case R.id.continueGoalButton:
-//                Intent intent = new Intent(this, AgeActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(this, HowOldActivivty.class);
+                startActivity(intent);
+                break;
             case R.id.trackingSleepButton:
-                if(tracking==false){
+                if (tracking == false) {
                     trackingSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
                     tracking = true;
-                }else{
+                } else {
                     trackingSleepButton.setBackgroundResource(R.drawable.multi_choosing_button);
                     tracking = false;
                 }
+                break;
             case R.id.trackingSleepTextView:
-                if(tracking==false){
+                if (tracking == false) {
                     trackingSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
                     tracking = true;
-                }else{
+                } else {
                     trackingSleepButton.setBackgroundResource(R.drawable.multi_choosing_button);
                     tracking = false;
                 }
+                break;
             case R.id.trackingSleepImageView:
-                if(tracking==false){
+                if (tracking == false) {
                     trackingSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
                     tracking = true;
-                }else{
+                } else {
                     trackingSleepButton.setBackgroundResource(R.drawable.multi_choosing_button);
                     tracking = false;
                 }
+                break;
+
+
+            case R.id.fasterSleepButton:
+                if (faster == false) {
+                    fasterSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                    faster = true;
+                } else {
+                    fasterSleepButton.setBackgroundResource(R.drawable.multi_choosing_button);
+                    faster = false;
+                }
+                break;
+            case R.id.fasterSleepTextView:
+                if (faster == false) {
+                    fasterSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                    faster = true;
+                } else {
+                    fasterSleepButton.setBackgroundResource(R.drawable.multi_choosing_button);
+                    faster = false;
+                }
+                break;
+            case R.id.fasterSleepImageView:
+                if (faster == false) {
+                    fasterSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                    faster = true;
+                } else {
+                    fasterSleepButton.setBackgroundResource(R.drawable.multi_choosing_button);
+                    faster = false;
+                }
+                break;
+
+
+            case R.id.betterSleepButton:
+                if (better == false) {
+                    betterSleep.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                    better = true;
+                } else {
+                    betterSleep.setBackgroundResource(R.drawable.multi_choosing_button);
+                    better = false;
+                }
+                break;
+            case R.id.betterSleepTextView:
+                if (better == false) {
+                    betterSleep.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                    better = true;
+                } else {
+                    betterSleep.setBackgroundResource(R.drawable.multi_choosing_button);
+                    better = false;
+                }
+                break;
+            case R.id.betterSleepImageView:
+                if (better == false) {
+                    betterSleep.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                    better = true;
+                } else {
+                    betterSleep.setBackgroundResource(R.drawable.multi_choosing_button);
+                    better = false;
+                }
+                break;
+
+
+            case R.id.betterWakeUpButton:
+                if (easier == false) {
+                    easierWakeUpButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                    easier = true;
+                } else {
+                    easierWakeUpButton.setBackgroundResource(R.drawable.multi_choosing_button);
+                    easier = false;
+                }
+                break;
+            case R.id.easierWakeUpTextView:
+                if (easier == false) {
+                    easierWakeUpButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                    easier = true;
+                } else {
+                    easierWakeUpButton.setBackgroundResource(R.drawable.multi_choosing_button);
+                    easier = false;
+                }
+                break;
+            case R.id.easierWakeUpImageView:
+                if (easier == false) {
+                    easierWakeUpButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                    easier = true;
+                } else {
+                    easierWakeUpButton.setBackgroundResource(R.drawable.multi_choosing_button);
+                    easier = false;
+                }
+                break;
+
+
+            case R.id.regulateRythmButton:
+                if (regulate == false) {
+                    regulateRythmButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                    regulate = true;
+                } else {
+                    regulateRythmButton.setBackgroundResource(R.drawable.multi_choosing_button);
+                    regulate = false;
+                }
+                break;
+            case R.id.regulateRythmTextView:
+                if (regulate == false) {
+                    regulateRythmButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                    regulate = true;
+                } else {
+                    regulateRythmButton.setBackgroundResource(R.drawable.multi_choosing_button);
+                    regulate = false;
+                }
+                break;
+            case R.id.regulateImageView:
+                if (regulate == false) {
+                    regulateRythmButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                    regulate = true;
+                } else {
+                    regulateRythmButton.setBackgroundResource(R.drawable.multi_choosing_button);
+                    regulate = false;
+                }
+                break;
+
+
+            case R.id.relaxButton:
+                if (relax == false) {
+                    relaxButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                    relax = true;
+                } else {
+                    relaxButton.setBackgroundResource(R.drawable.multi_choosing_button);
+                    relax = false;
+                }
+                break;
+            case R.id.relaxTextView:
+                if (relax == false) {
+                    relaxButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                    relax = true;
+                } else {
+                    relaxButton.setBackgroundResource(R.drawable.multi_choosing_button);
+                    relax = false;
+                }
+                break;
+            case R.id.relaxImageView:
+                if (relax == false) {
+                    relaxButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                    relax = true;
+                } else {
+                    relaxButton.setBackgroundResource(R.drawable.multi_choosing_button);
+                    relax = false;
+                }
+                break;
 
         }
 
-
     }
+
 }
+
+        
+
+
+
+
+
+
