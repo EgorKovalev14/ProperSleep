@@ -1,6 +1,7 @@
 package ru.samsung.slumber;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +33,9 @@ public class AlarmAdapter extends ArrayAdapter<AlarmItem> {
 
         AlarmItem alarmItem = list.get(position);
 
+        SwitchCompat switchCompat = convertView.findViewById(R.id.switchCompat);
+        switchCompat.setChecked(alarmItem.getSwitchCompat());
+
         TextView alarmTime = convertView.findViewById(R.id.textViewAlarmTime);
         alarmTime.setText(alarmItem.getAlarmTime());
 
@@ -41,8 +45,13 @@ public class AlarmAdapter extends ArrayAdapter<AlarmItem> {
         TextView timeBeforeWakening = convertView.findViewById(R.id.textViewTimeBeforeWakening);
         timeBeforeWakening.setText(alarmItem.getTimeBeforeWakening());
 
-        SwitchCompat switchCompat = convertView.findViewById(R.id.switchCompat);
-        switchCompat.setChecked(alarmItem.getSwitchCompat());
+//        if(switchCompat.isChecked()){
+//            timeBeforeWakening.setTextColor(Color.parseColor(String.valueOf(R.color.purple));
+//        }else{
+
+//        }
+
+
 
         return convertView;
 

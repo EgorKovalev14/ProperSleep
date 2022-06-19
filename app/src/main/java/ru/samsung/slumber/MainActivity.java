@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button button;
@@ -19,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button.setOnClickListener(this);
         if(getSupportActionBar()!=null)
             this.getSupportActionBar().hide();
+
 
 
     }
