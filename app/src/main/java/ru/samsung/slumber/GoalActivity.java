@@ -1,16 +1,21 @@
 package ru.samsung.slumber;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 
 public class GoalActivity extends AppCompatActivity implements View.OnClickListener {
     TextView textView;
@@ -39,6 +44,9 @@ public class GoalActivity extends AppCompatActivity implements View.OnClickListe
     Boolean easier;
     Boolean regulate;
     Boolean relax;
+    ArrayList<Button> list = new ArrayList<>();
+    Integer goal = -1;
+
 
 
     @Override
@@ -91,6 +99,13 @@ public class GoalActivity extends AppCompatActivity implements View.OnClickListe
         relax = false;
         continueGoalButton = findViewById(R.id.continueGoalButton);
         continueGoalButton.setOnClickListener(this);
+        list.add(easierWakeUpButton);
+        list.add(fasterSleepButton);
+        list.add(regulateRythmButton);
+        list.add(relaxButton);
+        list.add(trackingSleepButton);
+        list.add(betterSleep);
+
 
 
     }
@@ -99,182 +114,160 @@ public class GoalActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.continueGoalButton:
-                Intent intent = new Intent(this, HowOldActivivty.class);
-                startActivity(intent);
+                if(goal!=-1) {
+                    Intent intent = new Intent(this, HowOldActivivty.class);
+                    startActivity(intent);
+                }else{
+                    Toast toast = new Toast(this);
+                    toast.setDuration(Toast.LENGTH_SHORT);
+                    LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    View view1 = inflater.inflate(R.layout.toast_goal, null);
+                    toast.setView(view1);
+                    toast.show();
+                }
                 break;
             case R.id.trackingSleepButton:
-                if (tracking == false) {
-                    trackingSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    tracking = true;
-                } else {
-                    trackingSleepButton.setBackgroundResource(R.drawable.multi_choosing_button);
-                    tracking = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                trackingSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 0;
                 break;
             case R.id.trackingSleepTextView:
-                if (tracking == false) {
-                    trackingSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    tracking = true;
-                } else {
-                    trackingSleepButton.setBackgroundResource(R.drawable.multi_choosing_button);
-                    tracking = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                trackingSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 0;
                 break;
             case R.id.trackingSleepImageView:
-                if (tracking == false) {
-                    trackingSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    tracking = true;
-                } else {
-                    trackingSleepButton.setBackgroundResource(R.drawable.multi_choosing_button);
-                    tracking = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                trackingSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 0;
                 break;
 
 
             case R.id.fasterSleepButton:
-                if (faster == false) {
-                    fasterSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    faster = true;
-                } else {
-                    fasterSleepButton.setBackgroundResource(R.drawable.multi_choosing_button);
-                    faster = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                fasterSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 1;
                 break;
             case R.id.fasterSleepTextView:
-                if (faster == false) {
-                    fasterSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    faster = true;
-                } else {
-                    fasterSleepButton.setBackgroundResource(R.drawable.multi_choosing_button);
-                    faster = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                fasterSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 1;
+
                 break;
             case R.id.fasterSleepImageView:
-                if (faster == false) {
-                    fasterSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    faster = true;
-                } else {
-                    fasterSleepButton.setBackgroundResource(R.drawable.multi_choosing_button);
-                    faster = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                fasterSleepButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 1;
+
                 break;
 
 
             case R.id.betterSleepButton:
-                if (better == false) {
-                    betterSleep.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    better = true;
-                } else {
-                    betterSleep.setBackgroundResource(R.drawable.multi_choosing_button);
-                    better = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                betterSleep.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 2;
+
                 break;
             case R.id.betterSleepTextView:
-                if (better == false) {
-                    betterSleep.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    better = true;
-                } else {
-                    betterSleep.setBackgroundResource(R.drawable.multi_choosing_button);
-                    better = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                betterSleep.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 2;
+
                 break;
             case R.id.betterSleepImageView:
-                if (better == false) {
-                    betterSleep.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    better = true;
-                } else {
-                    betterSleep.setBackgroundResource(R.drawable.multi_choosing_button);
-                    better = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                betterSleep.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 2;
+
                 break;
 
 
             case R.id.betterWakeUpButton:
-                if (easier == false) {
-                    easierWakeUpButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    easier = true;
-                } else {
-                    easierWakeUpButton.setBackgroundResource(R.drawable.multi_choosing_button);
-                    easier = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                betterSleep.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 3;
                 break;
             case R.id.easierWakeUpTextView:
-                if (easier == false) {
-                    easierWakeUpButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    easier = true;
-                } else {
-                    easierWakeUpButton.setBackgroundResource(R.drawable.multi_choosing_button);
-                    easier = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                easierWakeUpButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 3;
                 break;
             case R.id.easierWakeUpImageView:
-                if (easier == false) {
-                    easierWakeUpButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    easier = true;
-                } else {
-                    easierWakeUpButton.setBackgroundResource(R.drawable.multi_choosing_button);
-                    easier = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                easierWakeUpButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 3;
+
                 break;
 
 
             case R.id.regulateRythmButton:
-                if (regulate == false) {
-                    regulateRythmButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    regulate = true;
-                } else {
-                    regulateRythmButton.setBackgroundResource(R.drawable.multi_choosing_button);
-                    regulate = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                regulateRythmButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 4;
                 break;
             case R.id.regulateRythmTextView:
-                if (regulate == false) {
-                    regulateRythmButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    regulate = true;
-                } else {
-                    regulateRythmButton.setBackgroundResource(R.drawable.multi_choosing_button);
-                    regulate = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                regulateRythmButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 4;
                 break;
             case R.id.regulateImageView:
-                if (regulate == false) {
-                    regulateRythmButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    regulate = true;
-                } else {
-                    regulateRythmButton.setBackgroundResource(R.drawable.multi_choosing_button);
-                    regulate = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                regulateRythmButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 4;
                 break;
 
 
             case R.id.relaxButton:
-                if (relax == false) {
-                    relaxButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    relax = true;
-                } else {
-                    relaxButton.setBackgroundResource(R.drawable.multi_choosing_button);
-                    relax = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                relaxButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 5;
                 break;
             case R.id.relaxTextView:
-                if (relax == false) {
-                    relaxButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    relax = true;
-                } else {
-                    relaxButton.setBackgroundResource(R.drawable.multi_choosing_button);
-                    relax = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                relaxButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 5;
                 break;
             case R.id.relaxImageView:
-                if (relax == false) {
-                    relaxButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
-                    relax = true;
-                } else {
-                    relaxButton.setBackgroundResource(R.drawable.multi_choosing_button);
-                    relax = false;
+                for(int i=0; i<6;i++){
+                    list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
+                relaxButton.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                goal = 5;
                 break;
-
         }
 
     }
