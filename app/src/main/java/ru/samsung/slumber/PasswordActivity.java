@@ -16,9 +16,10 @@ import java.util.regex.Pattern;
 
 public class PasswordActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button buttonContinue;
+    Button buttonContinue, buttonLogin;
     EditText editText;
     static String password;
+    View background;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,6 +30,10 @@ public class PasswordActivity extends AppCompatActivity implements View.OnClickL
         buttonContinue.setOnClickListener(this);
         if(getSupportActionBar()!=null)
             this.getSupportActionBar().hide();
+        buttonLogin=findViewById(R.id.loginButtonFromPassword);
+        buttonLogin.setOnClickListener(this);
+        background = findViewById(R.id.password_background);
+        background.setOnClickListener(this);
 
 
     }
@@ -49,6 +54,14 @@ public class PasswordActivity extends AppCompatActivity implements View.OnClickL
                     toast.setView(view1);
                     toast.show();
                 }
+                break;
+            case R.id.loginButtonFromPassword:
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.password_background:
+                NameActivity.hideKeyboard(this);
+                break;
 
 
         }

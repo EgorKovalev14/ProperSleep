@@ -2,6 +2,7 @@ package ru.samsung.slumber;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ public class RegimeActivity extends AppCompatActivity implements View.OnClickLis
     Button button1, button2, button3, continueRegimeButton;
     TextView textName;
     ArrayList<Button> list;
+    static Boolean regime = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,24 +50,30 @@ public class RegimeActivity extends AppCompatActivity implements View.OnClickLis
                 }
                 button2.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
                 button2.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                Log.d("regimeTAG", "0");
+                regime = true;
                 break;
             case R.id.trackingSleepButton1:
                 for(int i=0; i<3;i++){
                     list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
                 button1.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                Log.d("regimeTAG", "1");
+                regime = false;
                 break;
             case R.id.trackingSleepButton3:
                 for(int i=0; i<3;i++){
                     list.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
                 button3.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                Log.d("regimeTAG", "2");
+                regime=false;
                 break;
             case R.id.continueRegimeButton:
-                Intent intent = new Intent(this, WelcomeActivity.class);
-                startActivity(intent);
-
-
+                if(regime!=null){
+                    Intent intent = new Intent(this, WelcomeActivity.class);
+                    startActivity(intent);
+                }
 
         }
 

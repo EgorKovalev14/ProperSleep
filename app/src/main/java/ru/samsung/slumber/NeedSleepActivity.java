@@ -2,6 +2,7 @@ package ru.samsung.slumber;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,6 +16,7 @@ public class NeedSleepActivity extends AppCompatActivity implements View.OnClick
     Button button1, button2, button3, button4, button5, continueButton;
     ArrayList<Button> buttons = new ArrayList<Button>();
     TextView textName;
+    static Integer need_sleep = -1;
 
 
 
@@ -53,34 +55,46 @@ public class NeedSleepActivity extends AppCompatActivity implements View.OnClick
                     buttons.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
                 button1.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                need_sleep = 0;
                 break;
             case R.id.trackingSleepButton1:
                 for(int i=0; i<5;i++){
                     buttons.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
                 button2.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                Log.d("needTag", "1");
+                need_sleep = 1;
                 break;
             case R.id.trackingSleepButton3:
                 for(int i=0; i<5;i++){
                     buttons.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
                 button3.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                Log.d("needTag", "2");
+                need_sleep=2;
                 break;
             case R.id.trackingSleepButton4:
                 for(int i=0; i<5;i++){
                     buttons.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
                 button4.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                Log.d("needTag", "3");
+                need_sleep=3;
                 break;
             case R.id.trackingSleepButton5:
                 for(int i=0; i<5;i++){
                     buttons.get(i).setBackgroundResource(R.drawable.multi_choosing_button);
                 }
                 button5.setBackgroundResource(R.drawable.multi_choosing_button_stroke);
+                Log.d("needTag", "4");
+                need_sleep = 4;
                 break;
             case R.id.continueNeedSleepButton:
-                Intent intent = new Intent(this, RegimeActivity.class);
-                startActivity(intent);
+                if(need_sleep!=-1){
+                    Intent intent = new Intent(this, RegimeActivity.class);
+                    startActivity(intent);
+                }
+
         }
     }
 }

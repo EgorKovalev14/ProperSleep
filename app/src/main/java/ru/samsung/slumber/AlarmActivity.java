@@ -3,25 +3,33 @@ package ru.samsung.slumber;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.LongDef;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class AlarmActivity extends AppCompatActivity implements View.OnClickListener {
+public class AlarmActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener {
     ListView listView;
     ArrayList<AlarmItem> list;
     ArrayList<AlarmItem> list1;
     ListView listView1;
     AlarmAdapter adapter1;
+    BottomNavigationItemView item1, item2, item3, item4;
+    BottomNavigationView navigation_view;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,25 +45,12 @@ public class AlarmActivity extends AppCompatActivity implements View.OnClickList
         AlarmItem bestItem = new AlarmItem(alarm_time_count(totalMinutes,495), "5 циклов","8 часов 15 мин.", false);
         list.add(bestItem);
         listView1=findViewById(R.id.recyclerView2);
-
-        Integer nap = 25;
-        Integer one_cycle = 105;
-        Integer two_cycle = 195;
-        Integer three_cycles = 285;
-        Integer four_cycles = 375;
-        Integer five_cycles = 495;
-        Log.d("TimeTag", alarm_time_count(0,25));
-        Log.d("TimeTag", alarm_time_count(0,105));
-        Log.d("TimeTag", alarm_time_count(0,195));
-        Log.d("TimeTag", alarm_time_count(0,285));
-        Log.d("TimeTag", alarm_time_count(0,375));
-        Log.d("TimeTag", alarm_time_count(0,495));
-
-
-
-
-
-
+        item1 = findViewById(R.id.item_1);
+        item2 = findViewById(R.id.item_2);
+        item3 = findViewById(R.id.item_3);
+        item4 = findViewById(R.id.item_4);
+        navigation_view = findViewById(R.id.bottom_navigation);
+        navigation_view.setOnNavigationItemSelectedListener(this);
 
         list1.add(new AlarmItem(alarm_time_count(totalMinutes, 25), "Вздремнуть","25 мин.", false));
         list1.add(new AlarmItem(alarm_time_count(totalMinutes, 105), "1 цикл","1 час 45 мин.", false));
@@ -65,10 +60,13 @@ public class AlarmActivity extends AppCompatActivity implements View.OnClickList
         adapter1 = new AlarmAdapter(this,list1);
 
         listView1.setAdapter(adapter1);
+        item3.setChecked(true);
+        item1.setChecked(false);
 
 
 
     }
+
 
     @Override
     public void onClick(View view) {
@@ -96,4 +94,32 @@ public class AlarmActivity extends AppCompatActivity implements View.OnClickList
         return alarm_time_final;
 
     }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.item_1:
+                Log.d("ASSTAG12", "onNavigationItemSelected: 1");
+                item1.setChecked(true);
+                item2.setChecked(false);
+                item3.setChecked(false);
+                item4.setChecked(false);
+
+                break;
+
+            case R.id.item_3:
+                Log.d("ASSTAG12", "onNavigationItemSelected: 2 ");
+                item1.setChecked(false);
+                item2.setChecked(false);
+                item3.setChecked(true);
+                item4.setChecked(false);
+                break;
+
+
+
+        }
+        return false;
+    }
+
+
 }

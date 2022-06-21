@@ -19,8 +19,8 @@ public class GoToSleepActivity extends AppCompatActivity implements View.OnClick
     Button arrowDown2;
     TextView goToSleepHourTextView;
     TextView goToSleepMinutesTextView;
-    Integer hours;
-    Integer minutes;
+    static Integer hoursAsleep;
+    static Integer minutesAsleep;
     TextView goToSleepName;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,13 +36,14 @@ public class GoToSleepActivity extends AppCompatActivity implements View.OnClick
         arrowDown2.setOnClickListener(this);
         arrowUp2.setOnClickListener(this);
         goToSleepHourTextView = findViewById(R.id.textViewGoToSleepHour);
-        hours = 0;
-        minutes=0;
-        goToSleepHourTextView.setText("0"+Integer.toString(hours));
+        hoursAsleep = 0;
+        minutesAsleep=0;
+        goToSleepHourTextView.setText("0"+Integer.toString(hoursAsleep));
         continueGoToSleepButton = findViewById(R.id.continueGoToSleepButton);
         continueGoToSleepButton.setOnClickListener(this);
         goToSleepName = findViewById(R.id.goToSleepTextView);
         goToSleepName.setText(NameActivity.name);
+
 
 
 
@@ -52,53 +53,55 @@ public class GoToSleepActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.buttonUp1:
-                hours=(hours+1)%24;
-                if(hours<10){
-                    goToSleepHourTextView.setText("0"+Integer.toString(hours));
+                hoursAsleep=(hoursAsleep+1)%24;
+                if(hoursAsleep<10){
+                    goToSleepHourTextView.setText("0"+Integer.toString(hoursAsleep));
                 }else{
-                    goToSleepHourTextView.setText(hours.toString());
+                    goToSleepHourTextView.setText(hoursAsleep.toString());
                 }
                 break;
 
             case R.id.buttonDown1:
-                if(hours!=0){
-                    hours-=1;
+                if(hoursAsleep!=0){
+                    hoursAsleep-=1;
                 }else{
-                   hours=23;
+                   hoursAsleep=23;
                 }
 //                hours=Math.abs(hours-1)%24;
 
-                if(hours<10){
-                    goToSleepHourTextView.setText("0"+Integer.toString(hours));
+                if(hoursAsleep<10){
+                    goToSleepHourTextView.setText("0"+Integer.toString(hoursAsleep));
                 }else{
-                    goToSleepHourTextView.setText(hours.toString());
+                    goToSleepHourTextView.setText(hoursAsleep.toString());
                 }
                 break;
             case R.id.buttonUp2:
-                minutes=(minutes+1)%60;
-                if(minutes<10){
-                    goToSleepMinutesTextView.setText("0"+Integer.toString(minutes));
+                minutesAsleep=(minutesAsleep+1)%60;
+                if(minutesAsleep<10){
+                    goToSleepMinutesTextView.setText("0"+Integer.toString(minutesAsleep));
                 }else{
-                    goToSleepMinutesTextView.setText(minutes.toString());
+                    goToSleepMinutesTextView.setText(minutesAsleep.toString());
                 }
                 break;
 
             case R.id.buttonDown2:
-                if(minutes!=0){
-                    minutes-=1;
+                if(minutesAsleep!=0){
+                    minutesAsleep-=1;
                 }else{
-                    minutes=59;
+                    minutesAsleep=59;
                 }
 
-                if(minutes<10){
-                    goToSleepMinutesTextView.setText("0"+Integer.toString(minutes));
+                if(minutesAsleep<10){
+                    goToSleepMinutesTextView.setText("0"+Integer.toString(minutesAsleep));
                 }else{
-                    goToSleepMinutesTextView.setText(minutes.toString());
+                    goToSleepMinutesTextView.setText(minutesAsleep.toString());
                 }
                 break;
             case R.id.continueGoToSleepButton:
+                Log.d("asleepTag", hoursAsleep + " "+minutesAsleep);
                 Intent intent = new Intent(this, WakeUpTimeActivity.class);
                 startActivity(intent);
+
 
         }
     }

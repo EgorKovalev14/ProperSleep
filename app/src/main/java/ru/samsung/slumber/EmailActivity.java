@@ -17,9 +17,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class EmailActivity extends AppCompatActivity implements View.OnClickListener {
-    Button button;
+    Button button,loginFromEmail;
     static String email;
     EditText editText;
+    View background;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,6 +31,11 @@ public class EmailActivity extends AppCompatActivity implements View.OnClickList
         editText = findViewById(R.id.emailEditText);
         if(getSupportActionBar()!=null)
             this.getSupportActionBar().hide();
+
+        loginFromEmail = findViewById(R.id.loginButtonFromEmail);
+        loginFromEmail.setOnClickListener(this);
+        background = findViewById(R.id.email_background);
+        background.setOnClickListener(this);
     }
 
     @Override
@@ -49,7 +55,14 @@ public class EmailActivity extends AppCompatActivity implements View.OnClickList
                     toast.setView(view1);
                     toast.show();
                 }
-
+                break;
+            case R.id.loginButtonFromEmail:
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.email_background:
+                NameActivity.hideKeyboard(this);
+                break;
         }
     }
 

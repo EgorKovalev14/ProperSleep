@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class AlarmAdapter extends ArrayAdapter<AlarmItem> {
 
@@ -45,11 +46,12 @@ public class AlarmAdapter extends ArrayAdapter<AlarmItem> {
         TextView timeBeforeWakening = convertView.findViewById(R.id.textViewTimeBeforeWakening);
         timeBeforeWakening.setText(alarmItem.getTimeBeforeWakening());
 
-//        if(switchCompat.isChecked()){
-//            timeBeforeWakening.setTextColor(Color.parseColor(String.valueOf(R.color.purple));
-//        }else{
-
-//        }
+        if(switchCompat.isChecked()){
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(Calendar.SECOND, 0);
+            calendar.set(Calendar.MILLISECOND, 0);
+            calendar.set(Calendar.MINUTE, 0);
+        }
 
 
 

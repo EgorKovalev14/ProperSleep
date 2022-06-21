@@ -52,11 +52,10 @@ public class UserData {
         return regime;
     }
 
-    public UserData(String name, String email, String password, String user_id, Integer goal, Integer age, String wake_up_time, String go_to_sleep_time, Integer sleep_hours, Boolean regime) {
+    public UserData(String name, String email, String password, Integer goal, Integer age, String wake_up_time, String go_to_sleep_time, Integer sleep_hours, Boolean regime) {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.user_id = user_id;
         this.goal = goal;
         this.age = age;
         this.wake_up_time = wake_up_time;

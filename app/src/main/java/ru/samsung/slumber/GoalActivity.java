@@ -45,7 +45,7 @@ public class GoalActivity extends AppCompatActivity implements View.OnClickListe
     Boolean regulate;
     Boolean relax;
     ArrayList<Button> list = new ArrayList<>();
-    Integer goal = -1;
+    static Integer goal = -1;
 
 
 
