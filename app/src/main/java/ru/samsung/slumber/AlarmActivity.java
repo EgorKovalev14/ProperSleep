@@ -62,6 +62,8 @@ public class AlarmActivity extends AppCompatActivity implements View.OnClickList
         listView1.setAdapter(adapter1);
         item3.setChecked(true);
         item1.setChecked(false);
+        item2.setChecked(false);
+        item4.setChecked(false);
 
 
 
@@ -101,8 +103,12 @@ public class AlarmActivity extends AppCompatActivity implements View.OnClickList
             case R.id.item_1:
                 Intent intent = new Intent(this, TipsActivity.class);
                 startActivity(intent);
+                overridePendingTransition(0, 0);
                 break;
-
+            case R.id.item_2:
+                Intent intent1 = new Intent(this,ActivityDiary.class);
+                startActivity(intent1);
+                overridePendingTransition(0, 0);
         }
         return false;
     }

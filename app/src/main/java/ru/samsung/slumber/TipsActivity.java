@@ -50,6 +50,8 @@ public class TipsActivity extends AppCompatActivity implements BottomNavigationV
         sreda.setOnClickListener(this);
         textView17=findViewById(R.id.textView17);
         textView17.setOnClickListener(this);
+        item12=findViewById(R.id.item_2);
+        item14=findViewById(R.id.item_4);
     }
 
     @Override
@@ -58,10 +60,13 @@ public class TipsActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.item_3:
                 Intent intent = new Intent(this, AlarmActivity.class);
                 startActivity(intent);
+                overridePendingTransition(0, 0);
                 break;
-
-
-
+            case R.id.item_2:
+                Intent intent1 = new Intent(this,ActivityDiary.class);
+                startActivity(intent1);
+                overridePendingTransition(0, 0);
+                break;
         }
         return false;
     }
