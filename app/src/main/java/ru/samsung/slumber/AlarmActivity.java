@@ -99,26 +99,16 @@ public class AlarmActivity extends AppCompatActivity implements View.OnClickList
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             case R.id.item_1:
-                Log.d("ASSTAG12", "onNavigationItemSelected: 1");
-                item1.setChecked(true);
-                item2.setChecked(false);
-                item3.setChecked(false);
-                item4.setChecked(false);
-
+                Intent intent = new Intent(this, TipsActivity.class);
+                startActivity(intent);
                 break;
-
-            case R.id.item_3:
-                Log.d("ASSTAG12", "onNavigationItemSelected: 2 ");
-                item1.setChecked(false);
-                item2.setChecked(false);
-                item3.setChecked(true);
-                item4.setChecked(false);
-                break;
-
-
 
         }
         return false;
+    }
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
     }
 
 

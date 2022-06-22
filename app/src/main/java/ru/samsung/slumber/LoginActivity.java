@@ -9,9 +9,12 @@ import android.widget.EditText;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.jar.Attributes;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     EditText editText;
     Button continueLoginButton, registerButton;
+    View background;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -22,6 +25,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         registerButton = findViewById(R.id.registerButton);
         continueLoginButton.setOnClickListener(this);
         registerButton.setOnClickListener(this);
+        background = findViewById(R.id.background_login);
+        background.setOnClickListener(this);
     }
 
     @Override
@@ -31,7 +36,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Intent intent = new Intent(this, NameActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.background_login:
+                NameActivity.hideKeyboard(this);
+                break;
         }
+
 
     }
 }

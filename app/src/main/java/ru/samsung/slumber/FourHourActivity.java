@@ -1,0 +1,29 @@
+package ru.samsung.slumber;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class FourHourActivity extends AppCompatActivity implements View.OnClickListener {
+    ImageView image;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_four_hour);
+        image = findViewById(R.id.imageViewFourHour);
+        image.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch(view.getId()){
+            case R.id.imageViewFourHour:
+                finish();
+        }
+
+    }
+}
