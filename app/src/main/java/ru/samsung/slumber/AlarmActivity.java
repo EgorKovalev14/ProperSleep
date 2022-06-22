@@ -109,6 +109,12 @@ public class AlarmActivity extends AppCompatActivity implements View.OnClickList
                 Intent intent1 = new Intent(this,ActivityDiary.class);
                 startActivity(intent1);
                 overridePendingTransition(0, 0);
+                break;
+            case R.id.item_4:
+                Intent intent2 = new Intent(this,StatisticActivity.class);
+                startActivity(intent2);
+                overridePendingTransition(0, 0);
+                break;
         }
         return false;
     }

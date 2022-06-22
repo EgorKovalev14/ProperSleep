@@ -67,6 +67,10 @@ public class TipsActivity extends AppCompatActivity implements BottomNavigationV
                 startActivity(intent1);
                 overridePendingTransition(0, 0);
                 break;
+            case R.id.item_4:
+                Intent intent2 = new Intent(this,StatisticActivity.class);
+                startActivity(intent2);
+                overridePendingTransition(0, 0);
         }
         return false;
     }

@@ -10,26 +10,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
-public class ActivityDiary extends AppCompatActivity implements  BottomNavigationView.OnNavigationItemSelectedListener {
+public class StatisticActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     BottomNavigationView bottomNavigationView;
-    BottomNavigationItemView item1,item2,item3,item4;
+    BottomNavigationItemView item1, item2, item3, item4;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_diary);
-        bottomNavigationView=findViewById(R.id.bottom_navigation_diary);
+        setContentView(R.layout.activity_statistic);
+        bottomNavigationView = findViewById(R.id.bottom_navigation_statistic);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
         item1=findViewById(R.id.item_1);
         item2=findViewById(R.id.item_2);
         item3=findViewById(R.id.item_3);
         item4=findViewById(R.id.item_4);
         item1.setChecked(false);
-        item2.setChecked(true);
+        item2.setChecked(false);
         item3.setChecked(false);
-        item4.setChecked(false);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
-
+        item4.setChecked(true);
     }
 
     @Override
@@ -40,17 +40,20 @@ public class ActivityDiary extends AppCompatActivity implements  BottomNavigatio
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 break;
-            case R.id.item_3:
-                Intent intent1 = new Intent(this, AlarmActivity.class);
+            case R.id.item_2:
+                Intent intent1 = new Intent(this, ActivityDiary.class);
                 startActivity(intent1);
                 overridePendingTransition(0, 0);
                 break;
-            case R.id.item_4:
-                Intent intent3 = new Intent(this, AlarmActivity.class);
-                startActivity(intent3);
+            case R.id.item_3:
+                Intent intent2 = new Intent(this, AlarmActivity.class);
+                startActivity(intent2);
                 overridePendingTransition(0, 0);
                 break;
         }
         return false;
     }
-}
+    }
+
+
+
